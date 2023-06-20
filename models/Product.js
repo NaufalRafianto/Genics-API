@@ -1,11 +1,10 @@
-const {
-  Schema,
-  model
-} = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-// Create schema
-// - name: String
-// - price: Number
-const Product = Schema();
+const Product = Schema({
+  name: { type: String, required: true },
+  category: { type: String, required: true },
+  price: { type: Number, required: true },
+  stock: { type: Number, required: true },
+});
 
-module.exports = model('Products', Product);
+module.exports = model("Products", Product);
